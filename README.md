@@ -13,7 +13,9 @@ Para realizar la actividad se utilizan:
 * Comprobar el montaje y desmontaje
 
 3. Desarrllo
+   
 3.1. Configuracion de la boveda de contraseñas
+
 En una primera etapa se utiliza KeePassXC para crear una base de datos destinada al almacenamiento seguro de credenciales
 Se configurara una contraseña maestra robusta, formada por varias palabras aleatorias, y se incorpora un archivo llave como mecanismo adicional de proteccion
 
@@ -31,29 +33,43 @@ El uso de contraseñas unicas permite reducir el riesgo de que la filtracion de 
 <img width="1600" height="1173" alt="WhatsApp Image 2026-10-28 at 19 31 34" src="https://github.com/user-attachments/assets/bce4ab4f-f58c-4023-8e29-8172f17372a9" />
 
 Configuracion del archivo llave
+
 Como medida adicional de proteccion, se configura un archivo llave asociado a la base de datos de KeePassXC
 El mecanismo requiere disponer tanto de la contraseña maestra como del archivo lalve para desbloquear la boveda
 El archivo llave debe conservarse en un lugar seguro y no deberia publicarse en el repositorio
 
 3.2. Creacion del contenedor cifrado
+
 En esta seguda etapa se utilizara Veracrypt parqa crear un contenedor cifrado
 Se selecciona la opcion de creacion de un contenedor de archivos cifrado y se configura en un volumen estandar de 100MB
 Se mantendran los parametros de cifrado predeterminados y se establecera una contraseña distinta a la utilizada en KeePass
 Durante el proceso de creacion, se debera mover el raton aleatoriamente dentro de la ventana, con fin de crear entropia y aleatoriedad
+
+<img width="1600" height="989" alt="WhatsApp Image 2026-10-28 at 20 10 33" src="https://github.com/user-attachments/assets/883c22d3-564f-4efb-a70f-fdac0e4737a6" />
+
 Finalmente se completara el formateo y se verifica que el volumen se haya creado correctamente
 
+
 Montaje del volumen
+
 Una vez creado el contenedor, se procede a montar desde Veracrypt
 Se seleccionara una letra de unidad disponible, se busca el archivo contenedor y se introduce la contraseña correspondiente
 Cuando el volumen se monta correctamente, aparece como una unidad disponible en el Explorador de archivos de Windows, lo que permitira acceder a los archivos almacenados dentro del contenedor y trabajar con ellos normalmente mientras el volumen permanezca desbloqueado
 
+<img width="1600" height="1294" alt="WhatsApp Image 2026-10-28 at 20 06 50" src="https://github.com/user-attachments/assets/499faf9f-d854-45db-b782-498915c7e268" />
+
 Creacion de archivo de aprendizajes
+
 Dentro del volumen montado se crea un archivo llamado aprendizajez.txt
 En el se registraran tres conceptos importantes
 - Gestion de contraseñas, los gestores permiten almacenar credenciales de forma organizada y protegida, ademas de generar contraseñas robustas y unicas
 - Proteccion adicional, Utilizar un archivo llave junto con una contraseña maestra agrega un requisito de acceso a la boveda
 - Cifrado de datos, un contenedor cifrado permite proteger la confidencialidad de los archivos almacenados cuando el volumen esta desmontado
+  
+<img width="920" height="885" alt="WhatsApp Image 2026-10-28 at 20 09 38" src="https://github.com/user-attachments/assets/6c97cb13-b013-4757-9412-5cd03df3225d" />
+
 
 Desmontaje del volumen
+
 Una vez finalizada la actividad, se desmonta el volumen desde Veracrypt
 Despues de realizar esta accion, la unidad deja de estar disponible como un disco accesible desde el Explorador de archivos, aunque el archivo contenedor continua existiendo en la ubicacion original
